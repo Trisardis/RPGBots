@@ -9,14 +9,13 @@ public class DialogController : MonoBehaviour
 {
     [SerializeField] TMP_Text _storyText;
     [SerializeField] Button[] _choiceButtons;
-    [SerializeField] TextAsset _dialog;
 
     Story _story;
 
     [ContextMenu("Start Dialog")]
-    public void StartDialog()
+    public void StartDialog(TextAsset dialog)
     {
-        _story = new Story(_dialog.text);
+        _story = new Story(dialog.text);
         RefreshView();
     }
 
